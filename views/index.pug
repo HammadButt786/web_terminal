@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    br
+    .container 
+      a(href="/add").btn.btn-primary(style="float:right") Add Product 
+      br
+    br
+    table.table.table-hover 
+      thead.table-dark 
+        tr 
+          th Name
+          th Description
+          th Price
+          th Rating
+          th Cart
+          th Update
+      tbody 
+        each product in products 
+          tr 
+            td=product.name
+            td=product.description
+            td=product.price
+            td=product.rating
+            td 
+              button.btn.btn-primary Add to Cart 
+            td 
+              a(href="/update") Update 

@@ -1,0 +1,18 @@
+extends layout 
+
+block content
+    .container 
+        form(action="/add" method="post")
+            div.form-group
+                label(for="name") Name
+                input(type="text" ,class="form-control" ,id="name" ,name="name" ,placeholder="Enter Name")
+            br
+            div.form-group
+                label(for="description") Description
+                input(type="text" ,class="form-control" ,id="description" ,name="description" ,placeholder="Describe")
+            br
+            div.form-group
+                label(for="price") Price
+                input(type="text" ,class="form-control" ,id="price" ,name="price" ,placeholder="Price")
+            br
+            button.btn.btn-primary(type="submit") Submit
