@@ -14,15 +14,21 @@ block content
           th Price
           th Rating
           th Cart
-          th Update
       tbody 
         each product in products 
           tr 
             td=product.name
             td=product.description
             td=product.price
-            td=product.rating
+            td
+              -let n=0
+              while n<=4
+                if product.rating-1>=n
+                  span 
+                    i.fa.fa-star(style="color:yellow")
+                else
+                  span 
+                    i.fa.fa-star
+                -n+=1
             td 
-              button.btn.btn-primary Add to Cart 
-            td 
-              a(href="/update") Update 
+              a(href="/cart/"+product._id).btn.btn-primary Add to Cart 

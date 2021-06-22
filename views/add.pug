@@ -5,14 +5,18 @@ block content
         form(action="/add" method="post")
             div.form-group
                 label(for="name") Name
-                input(type="text" ,class="form-control" ,id="name" ,name="name" ,placeholder="Enter Name")
+                input(type="text" ,class="form-control" ,id="name" ,name="name" ,placeholder="Enter Name", required)
             br
             div.form-group
                 label(for="description") Description
-                input(type="text" ,class="form-control" ,id="description" ,name="description" ,placeholder="Describe")
+                input(type="text" ,class="form-control" ,id="description" ,name="description" ,placeholder="Describe", required)
             br
             div.form-group
                 label(for="price") Price
-                input(type="text" ,class="form-control" ,id="price" ,name="price" ,placeholder="Price")
+                input(type="text" ,class="form-control" ,id="price" ,name="price" ,placeholder="Price", required)
+            br
+            div.form-group
+                label(for="rating") Ratings
+                input(type="number" ,class="form-control" ,id="rating", min=1, max=5 ,name="rating" ,placeholder="Ratings" ,required)
             br
             button.btn.btn-primary(type="submit") Submit

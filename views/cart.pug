@@ -1,0 +1,25 @@
+extends layout
+
+block content
+     
+    -let  total = 0;
+    .container
+        br
+        table.table.table-hover 
+            thead.table-dark 
+                tr
+                    th Name
+                    th Price  
+                    th Action  
+            tbody 
+                each product in cart
+                    -total += product.price
+                    tr 
+                        td=product.name 
+                        td=product.price
+                        td 
+                            a(href="cart/remove/"+product._id).btn.btn-danger Remove 
+            tfoot 
+                tr 
+                    th Total Price
+                    th=total

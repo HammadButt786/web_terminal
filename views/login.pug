@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+    h1 Login
+    .container 
+        form(action="/users/login" method="post")
+            div.form-group
+                label(for="description" ) Email
+                input(type="email" ,class="form-control" ,id="email" ,name="email" ,placeholder="Email",required)
+            br
+            div.form-group
+                label(for="price" required) Password
+                input(type="password" ,class="form-control" ,id="pass" ,name="password" ,placeholder="Password",required)
+            br
+            button.btn.btn-primary(type="submit") Login
